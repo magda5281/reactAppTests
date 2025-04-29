@@ -17,52 +17,76 @@ const TestingStateChange = () => {
     <div>
       {loaded && <h3> Page Loaded </h3>}
 
-      <button
-        onClick={() => {
-          setToggleTextVisible(!toggleTextVisible);
-        }}
-      >
-        Toggle text
-      </button>
-      {toggleTextVisible && <p>Text visible</p>}
-      <button
-        onClick={() => {
-          setBtnDisabled(!btnDisabled);
-        }}
-      >
-        Toggle button disabled
-      </button>
-      <button disabled={btnDisabled}>Disabled</button>
-
       <div>
-        <h3> List </h3>
+        <div style={{ padding: '10px' }}>
+          <h3>Toggle Text Visible</h3>
+          <button
+            onClick={() => {
+              setToggleTextVisible(!toggleTextVisible);
+            }}
+          >
+            Toggle text
+          </button>
+          {toggleTextVisible && <p>Text visible</p>}
+        </div>
+        <div
+          style={{
+            padding: '10px',
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '10px',
+          }}
+        >
+          {' '}
+          <button
+            onClick={() => {
+              setBtnDisabled(!btnDisabled);
+            }}
+          >
+            Toggle button disabled
+          </button>
+          <button disabled={btnDisabled}>Disabled</button>
+        </div>
+      </div>
+      <div>
+        <h3> List State Change </h3>
         {elements.map((item) => (
-          <div key={item.id} data-testid='record'>
+          <div key={item.id} data-testid='record' style={{ padding: '10px' }}>
             {item.id}: {item.name}
           </div>
         ))}
-        <button
-          onClick={() => {
-            setElements([
-              ...elements,
-              {
-                id: 3,
-                name: 'Helen',
-              },
-            ]);
+
+        <div
+          style={{
+            padding: '10px',
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '10px',
           }}
         >
-          {' '}
-          Add to list{' '}
-        </button>
-        <button
-          onClick={() => {
-            setElements(elements.filter((item) => item.id != 1));
-          }}
-        >
-          {' '}
-          Remove from list{' '}
-        </button>
+          <button
+            onClick={() => {
+              setElements([
+                ...elements,
+                {
+                  id: 3,
+                  name: 'Helen',
+                },
+              ]);
+            }}
+          >
+            {' '}
+            Add to list{' '}
+          </button>
+          <button
+            onClick={() => {
+              setElements(elements.filter((item) => item.id != 1));
+            }}
+          >
+            {' '}
+            Remove from list{' '}
+          </button>
+        </div>
       </div>
     </div>
   );

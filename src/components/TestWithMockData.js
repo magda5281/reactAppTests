@@ -2,7 +2,8 @@ import React from 'react';
 
 const TestWithMockData = ({ data, displayUnorderedList, handleClick }) => {
   return (
-    <div>
+    <div style={{ padding: '20px' }}>
+      <h3>Test With Mock Data</h3>
       {displayUnorderedList ? (
         <ul>
           {data.map((item) => (

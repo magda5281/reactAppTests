@@ -10,7 +10,8 @@ function TestAPICalls() {
     });
   }, []);
   return (
-    <div>
+    <div style={{ padding: '10px' }}>
+      <h3>Test API Calls</h3>
       {users.map((user) => (
         <div key={user.id}>{user.name}</div>
       ))}

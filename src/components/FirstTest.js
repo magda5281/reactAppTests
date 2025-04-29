@@ -1,7 +1,7 @@
 const FirstTest = () => {
   return (
     <div>
-      <h2> First test </h2>
+      <h2> First render element test </h2>
     </div>
   );
 };
